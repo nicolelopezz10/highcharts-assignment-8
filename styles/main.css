@@ -1,0 +1,252 @@
+html {
+    font-size: 100%; /* keep */
+    box-sizing: border-box; /* keep */
+}
+* {
+    box-sizing: inherit; /* keep */
+}
+body {
+    font-family: 'Lora', 'Palatino', Georgia, serif;
+    background: #CEE1F2; /* keep */
+    color: #333; /* keep */
+    margin: 0; /* keep */
+}
+h1 {
+    font-family: 'Work Sans', 'Trebuchet MS', Tahoma, sans-serif;
+}
+#ByLine {
+    font-style: italic;
+    font-size: 1.3em;
+}
+/* all images will stretch to fill their containing element */
+figure1, figure2 {
+    display: block;
+    width: 100%;
+}
+
+/* In the grid container below, you will change the columns,
+    the rows, and the AREAS to layout the page as instructed
+    in the assignment. After it matches the wide example, you will
+    write a media query with CSS rules to change the
+    layout to match the phone layout example.
+    */
+
+/* grid container */
+#wholecontainer {
+    max-width: 1280px; /* keep */
+    margin: auto; /* keep */
+    display: grid; /* keep */
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7,auto);
+    grid-template-areas:
+        "header header header header"
+        "header header header header"
+        "introduction introduction introduction introduction "
+        "container container containertwo containertwo"
+        "container container containertwo containertwo"
+        "conclusion conclusion conclusion conclusion"
+        "footer footer footer footer";
+
+}
+
+/* all grid items -
+    these are the 10 direct children of the container
+    - all the grid items are here already!
+    You may add lines as needed. Do not change any line marked -keep-
+    */
+
+header {
+    grid-area: header;
+    background: #4F5F73;
+    color: #fff;
+    padding: 2em;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    font-size: 1.5em;
+
+
+}
+#introduction {
+    grid-area: introduction;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 1em 1em;
+
+
+
+}
+#container {
+    grid-area: container;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    font-size: 0.8em;
+    height:600px;
+    width:700px;
+    padding: 1rem;
+}
+#source1, #source2 {
+padding: 1rem;
+margin: 10px;
+
+}
+#containertwo {
+    grid-area: containertwo;
+    font-size: 1.4em;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    height:600px;
+    width:700px;
+    padding: 1rem;
+
+
+}
+#conclusion {
+    grid-area: conclusion;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 1em 1em;
+}
+
+
+footer {
+grid-area: footer;
+text-align: center;
+font-size: 1.2em;
+padding:1.5em;
+grid-row-start: 7;
+grid-row-end: 8;
+grid-column-start: 1;
+grid-column-end: 5;
+background: #4F5F73;
+color: #fff;
+}
+
+
+
+
+a {
+    color: #857c00;
+    text-decoration: none;
+
+}
+a:hover {
+    color: #BFB52A;
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 850px) {
+  #wholecontainer {
+    max-width: 1280px; /* keep */
+    margin: auto; /* keep */
+    display: grid; /* keep */
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6,auto);
+    grid-template-areas:
+        "header"
+        "introduction"
+        "container"
+        "containertwo"
+        "conclusion"
+        "footer";
+
+          }
+          header {
+              grid-area: header;
+              background: #4F5F73;
+              color: #fff;
+              padding: 2em;
+              text-align: center;
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start: 1;
+              grid-row-end: 2;
+              font-size: 1.5em;
+
+
+          }
+          #introduction {
+              grid-area: introduction;
+
+              padding: 2em 2em;
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start: 2;
+              grid-row-end: 3;
+              font-size: 0.9em;
+              line-height: 1.5em;
+
+
+
+          }
+          #container {
+              grid-area: container;
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start: 3;
+              grid-row-end: 4;
+              font-size: 0.8em;
+              height:500px;
+              width:500px;
+
+
+          }
+
+
+          #containertwo {
+              grid-area: containertwo;
+
+              font-size: 1.4em;
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start: 4;
+              grid-row-end: 5;
+              height:500px;
+              width:500px;
+
+
+          }
+          #conclusion {
+              grid-area: conclusion;
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start: 5;
+              grid-row-end: 6;
+              font-size: 0.9em;
+              line-height: 1.5em;
+              padding: 2em 2em;
+          }
+
+
+          footer {
+          grid-area: footer;
+          text-align: center;
+          font-size: 1.2em;
+          padding:1.5em;
+          grid-row-start: 6;
+          grid-row-end: 7;
+          grid-column-start: 1;
+          grid-column-end: 2;
+          background: #4F5F73;
+          color: #fff;
+          }
+
+
+} */
